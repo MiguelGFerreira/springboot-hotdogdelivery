@@ -17,7 +17,7 @@ import jakarta.validation.constraints.Min;
 import org.hibernate.annotations.CascadeType;
 
 @Entity
-public class Order {
+public class HotDogOrder {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,10 +38,10 @@ public class Order {
 
 	private String status;
 
-	public Order() {
+	public HotDogOrder() {
 	}
 
-	public Order(Long id, Client client, List<Item> items, Double totalValue) {
+	public HotDogOrder(Long id, Client client, List<Item> items, Double totalValue) {
 		super();
 		this.id = id;
 		this.client = client;

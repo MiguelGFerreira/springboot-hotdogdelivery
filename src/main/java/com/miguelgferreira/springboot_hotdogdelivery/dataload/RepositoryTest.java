@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 import com.miguelgferreira.springboot_hotdogdelivery.domain.Client;
 import com.miguelgferreira.springboot_hotdogdelivery.domain.Item;
-import com.miguelgferreira.springboot_hotdogdelivery.domain.Order;
+import com.miguelgferreira.springboot_hotdogdelivery.domain.HotDogOrder;
 import com.miguelgferreira.springboot_hotdogdelivery.repository.ClientRepository;
 
 @Component
@@ -51,10 +51,10 @@ public class RepositoryTest implements ApplicationRunner {
 		davidOrderList1.add(dog2);
 		davidOrderList1.add(dog3);
 
-		var chrisOrder = new Order(ID_ORDER1, chris, chrisOrderList1, dog1.getPrice());
+		var chrisOrder = new HotDogOrder(ID_ORDER1, chris, chrisOrderList1, dog1.getPrice());
 		chris.newOrder(chrisOrder);
 
-		var davidOrder = new Order(ID_ORDER2, david, davidOrderList1, dog2.getPrice() + dog3.getPrice());
+		var davidOrder = new HotDogOrder(ID_ORDER2, david, davidOrderList1, dog2.getPrice() + dog3.getPrice());
 		david.newOrder(davidOrder);
 
 		logger.info(">>> Order 1 - Chris : " + chrisOrder);
@@ -66,7 +66,7 @@ public class RepositoryTest implements ApplicationRunner {
 		var chrisOrderList2 = new ArrayList<Item>();
 		chrisOrderList2.add(dog2);
 
-		var chrisOrder2 = new Order(ID_ORDER3, chris, chrisOrderList2, dog2.getPrice());
+		var chrisOrder2 = new HotDogOrder(ID_ORDER3, chris, chrisOrderList2, dog2.getPrice());
 		chris.newOrder(chrisOrder2);
 		logger.info(">>> Order 2 - Chris : " + chrisOrder2);
 

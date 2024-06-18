@@ -31,7 +31,7 @@ public class Client {
 
 	@OneToMany(mappedBy = "client", fetch = FetchType.EAGER)
 	@Cascade(CascadeType.ALL)
-	private List<Order> orders;
+	private List<HotDogOrder> orders;
 
 	public Client(Long id, String name, String address) {
 		super();
@@ -67,13 +67,13 @@ public class Client {
 		this.address = address;
 	}
 
-	public List<Order> getOrders() {
+	public List<HotDogOrder> getOrders() {
 		return orders;
 	}
 
-	public void newOrder(Order order) {
+	public void newOrder(HotDogOrder order) {
 		if (this.orders == null)
-			orders = new ArrayList<Order>();
+			orders = new ArrayList<HotDogOrder>();
 		orders.add(order);
 	}
 }
